@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Funcionario:</strong>
+  <%= @planejamento.funcionario %>
+</p>
+
+<p>
+  <strong>Evento:</strong>
+  <%= @planejamento.evento %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @planejamento.local %>
+</p>
+
+<p>
+  <strong>Tipo evento:</strong>
+  <%= @planejamento.tipo_evento %>
+</p>
+
+<p>
+  <strong>Data inicio prevista:</strong>
+  <%= @planejamento.data_inicio_prevista %>
+</p>
+
+<p>
+  <strong>Data fim prevista:</strong>
+  <%= @planejamento.data_fim_prevista %>
+</p>
+
+<p>
+  <strong>Justificativa:</strong>
+  <%= @planejamento.justificativa %>
+</p>
+
+<p>
+  <strong>Quantidade alunos:</strong>
+  <%= @planejamento.quantidade_alunos %>
+</p>
+
+<p>
+  <strong>Valor passagem:</strong>
+  <%= @planejamento.valor_passagem %>
+</p>
+
+<p>
+  <strong>Prioriade:</strong>
+  <%= @planejamento.prioriade %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @planejamento.status %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @planejamento.observacao %>
+</p>
+
+<%= link_to 'Edit', edit_planejamento_path(@planejamento) %> |
+<%= link_to 'Back', planejamentos_path %>

@@ -1,0 +1,65 @@
+<%= form_for(@planejamento) do |f| %>
+  <% if @planejamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planejamento.errors.count, "error") %> prohibited this planejamento from being saved:</h2>
+
+      <ul>
+      <% @planejamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :funcionario_id %><br>
+    <%= f.text_field :funcionario_id %>
+  </div>
+  <div class="field">
+    <%= f.label :evento %><br>
+    <%= f.text_field :evento %>
+  </div>
+  <div class="field">
+    <%= f.label :local %><br>
+    <%= f.text_field :local %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_evento %><br>
+    <%= f.number_field :tipo_evento %>
+  </div>
+  <div class="field">
+    <%= f.label :data_inicio_prevista %><br>
+    <%= f.date_select :data_inicio_prevista %>
+  </div>
+  <div class="field">
+    <%= f.label :data_fim_prevista %><br>
+    <%= f.date_select :data_fim_prevista %>
+  </div>
+  <div class="field">
+    <%= f.label :justificativa %><br>
+    <%= f.text_field :justificativa %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade_alunos %><br>
+    <%= f.number_field :quantidade_alunos %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_passagem %><br>
+    <%= f.text_field :valor_passagem %>
+  </div>
+  <div class="field">
+    <%= f.label :prioriade %><br>
+    <%= f.number_field :prioriade %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br>
+    <%= f.text_field :observacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

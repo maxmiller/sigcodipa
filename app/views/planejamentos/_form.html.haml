@@ -1,0 +1,61 @@
+= form_for @planejamento, :html => { :class => "form-horizontal" } do |f|
+  -if @planejamento.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@planejamento.errors.count, "error")} prohibited this planejamento from being saved:"
+
+      %ul
+        - @planejamento.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :funcionario, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :funcionario, :class => 'form-control'
+  .form-group
+    = f.label :evento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :evento, :class => 'form-control'
+  .form-group
+    = f.label :local, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :local, :class => 'form-control'
+  .form-group
+    = f.label :tipo_evento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :tipo_evento, :class => 'form-control'
+  .form-group
+    = f.label :data_inicio_prevista, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.date_select :data_inicio_prevista, :class => 'form-control'
+  .form-group
+    = f.label :data_fim_prevista, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.date_select :data_fim_prevista, :class => 'form-control'
+  .form-group
+    = f.label :justificativa, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :justificativa, :class => 'form-control'
+  .form-group
+    = f.label :quantidade_alunos, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :quantidade_alunos, :class => 'form-control'
+  .form-group
+    = f.label :valor_passagem, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :valor_passagem, :class => 'form-control'
+  .form-group
+    = f.label :prioriade, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :prioriade, :class => 'form-control'
+  .form-group
+    = f.label :status, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :status, :class => 'form-control'
+  .form-group
+    = f.label :observacao, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :observacao, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

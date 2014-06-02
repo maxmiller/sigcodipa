@@ -1,0 +1,26 @@
+.page-header
+  = link_to new_orcamento_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Orcamento
+  %h1 Listing orcamentos
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Nome
+        %th Valor
+        %th Slug
+        %th
+        %th
+        %th
+
+    %tbody
+      - @orcamentos.each do |orcamento|
+        %tr
+          %td= orcamento.nome
+          %td= orcamento.valor
+          %td= orcamento.slug
+          %td= link_to 'Show', orcamento
+          %td= link_to 'Edit', edit_orcamento_path(orcamento)
+          %td= link_to 'Destroy', orcamento, :data => { confirm: 'Are you sure?' }, :method => :delete

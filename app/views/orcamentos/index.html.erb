@@ -1,0 +1,29 @@
+<h1>Listing orcamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orcamentos.each do |orcamento| %>
+      <tr>
+        <td><%= orcamento.nome %></td>
+        <td><%= orcamento.valor %></td>
+        <td><%= orcamento.slug %></td>
+        <td><%= link_to 'Show', orcamento %></td>
+        <td><%= link_to 'Edit', edit_orcamento_path(orcamento) %></td>
+        <td><%= link_to 'Destroy', orcamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Orcamento', new_orcamento_path %>

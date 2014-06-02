@@ -1,0 +1,44 @@
+.page-header
+  = link_to new_planejamento_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Planejamento
+  %h1 Listing planejamentos
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Funcionario
+        %th Evento
+        %th Local
+        %th Tipo evento
+        %th Data inicio prevista
+        %th Data fim prevista
+        %th Justificativa
+        %th Quantidade alunos
+        %th Valor passagem
+        %th Prioriade
+        %th Status
+        %th Observacao
+        %th
+        %th
+        %th
+
+    %tbody
+      - @planejamentos.each do |planejamento|
+        %tr
+          %td= planejamento.funcionario
+          %td= planejamento.evento
+          %td= planejamento.local
+          %td= planejamento.tipo_evento
+          %td= planejamento.data_inicio_prevista
+          %td= planejamento.data_fim_prevista
+          %td= planejamento.justificativa
+          %td= planejamento.quantidade_alunos
+          %td= planejamento.valor_passagem
+          %td= planejamento.prioriade
+          %td= planejamento.status
+          %td= planejamento.observacao
+          %td= link_to 'Show', planejamento
+          %td= link_to 'Edit', edit_planejamento_path(planejamento)
+          %td= link_to 'Destroy', planejamento, :data => { confirm: 'Are you sure?' }, :method => :delete

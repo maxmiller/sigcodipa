@@ -1,0 +1,34 @@
+.page-header
+  = link_to planejamentos_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_planejamento_path(@planejamento), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show planejamento
+
+%dl.dl-horizontal
+  %dt Funcionario:
+  %dd= @planejamento.funcionario
+  %dt Evento:
+  %dd= @planejamento.evento
+  %dt Local:
+  %dd= @planejamento.local
+  %dt Tipo evento:
+  %dd= @planejamento.tipo_evento
+  %dt Data inicio prevista:
+  %dd= @planejamento.data_inicio_prevista
+  %dt Data fim prevista:
+  %dd= @planejamento.data_fim_prevista
+  %dt Justificativa:
+  %dd= @planejamento.justificativa
+  %dt Quantidade alunos:
+  %dd= @planejamento.quantidade_alunos
+  %dt Valor passagem:
+  %dd= @planejamento.valor_passagem
+  %dt Prioriade:
+  %dd= @planejamento.prioriade
+  %dt Status:
+  %dd= @planejamento.status
+  %dt Observacao:
+  %dd= @planejamento.observacao
