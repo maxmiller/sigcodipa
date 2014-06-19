@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_tipo_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Tipo
+  %h1 Listing tipos
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Nome
+        %th Slug
+        %th
+        %th
+        %th
+
+    %tbody
+      - @tipos.each do |tipo|
+        %tr
+          %td= tipo.nome
+          %td= tipo.slug
+          %td= link_to 'Show', tipo
+          %td= link_to 'Edit', edit_tipo_path(tipo)
+          %td= link_to 'Destroy', tipo, :data => { confirm: 'Are you sure?' }, :method => :delete

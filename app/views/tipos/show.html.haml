@@ -1,0 +1,14 @@
+.page-header
+  = link_to tipos_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_tipo_path(@tipo), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show tipo
+
+%dl.dl-horizontal
+  %dt Nome:
+  %dd= @tipo.nome
+  %dt Slug:
+  %dd= @tipo.slug

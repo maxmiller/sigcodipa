@@ -8,13 +8,9 @@
     .controls
       = f.text_field :valor, :class => 'text_field'
   .control-group
-    = f.label :slug, :class => 'control-label'
-    .controls
-      = f.text_field :slug, :class => 'text_field'
-  .control-group
     = f.label :tipo, :class => 'control-label'
     .controls
-      = f.text_field :tipo, :class => 'text_field'
+      = select_tag(:tipo, options_for_select([['Diárias',1],['Passagens',2]])) 
   .control-group
     = f.label :ano, :class => 'control-label'
     .controls

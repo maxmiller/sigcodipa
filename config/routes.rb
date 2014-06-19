@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tipos
+
   devise_for :usuarios
   resources :planejamentos
 

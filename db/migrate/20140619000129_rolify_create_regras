@@ -1,0 +1,19 @@
+class RolifyCreateRegras < ActiveRecord::Migration
+  def change
+    create_table(:regras) do |t|
+      t.string :name
+      t.references :resource, :polymorphic => true
+
+      t.timestamps
+    end
+
+    create_table(:usuarios_regras, :id => false) do |t|
+      t.references :usuario
+      t.references :regra
+    end
+
+    add_index(:regras, :name)
+    add_index(:regras, [ :name, :resource_type, :resource_id ])
+    add_index(:usuarios_regras, [ :usuario_id, :regra_id ])
+  end
+end

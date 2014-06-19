@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602234327) do
+ActiveRecord::Schema.define(version: 20140618235928) do
 
   create_table "funcionarios", force: true do |t|
     t.string   "siape"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140602234327) do
 
   create_table "orcamentos", force: true do |t|
     t.string   "nome"
-    t.decimal  "valor"
+    t.decimal  "valor",      precision: 10, scale: 0
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140602234327) do
     t.date     "data_fim_prevista"
     t.string   "justificativa"
     t.integer  "quantidade_alunos"
-    t.decimal  "valor_passagem"
+    t.decimal  "valor_passagem",       precision: 10, scale: 0
     t.integer  "prioriade"
     t.integer  "status"
     t.string   "observacao"
@@ -48,7 +48,14 @@ ActiveRecord::Schema.define(version: 20140602234327) do
     t.datetime "updated_at"
   end
 
-  add_index "planejamentos", ["funcionario_id"], name: "index_planejamentos_on_funcionario_id"
+  add_index "planejamentos", ["funcionario_id"], name: "index_planejamentos_on_funcionario_id", using: :btree
+
+  create_table "tipos", force: true do |t|
+    t.string   "nome"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "usuarios", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -65,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140602234327) do
     t.datetime "updated_at"
   end
 
-  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
-  add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
+  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+  add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
 
 end
