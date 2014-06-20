@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-variables";
+@import "bootstrap.scss";

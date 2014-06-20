@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  resources :tipos
-
-  devise_for :usuarios
   resources :planejamentos
 
   resources :orcamentos
 
-  resources :funcionarios
+  resources :tipos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

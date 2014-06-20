@@ -2,8 +2,9 @@ class CreateOrcamentos < ActiveRecord::Migration
   def change
     create_table :orcamentos do |t|
       t.string :nome
-      t.decimal :valor
-      t.string :slug
+      t.float :valor
+      t.references :tipo, index: true
+      t.integer :ano
 
       t.timestamps
     end

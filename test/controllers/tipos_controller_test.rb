@@ -18,7 +18,7 @@ class TiposControllerTest < ActionController::TestCase
 
   test "should create tipo" do
     assert_difference('Tipo.count') do
-      post :create, tipo: { nome: @tipo.nome, slug: @tipo.slug }
+      post :create, tipo: { nome: @tipo.nome }
     end
 
     assert_redirected_to tipo_path(assigns(:tipo))
@@ -35,7 +35,7 @@ class TiposControllerTest < ActionController::TestCase
   end
 
   test "should update tipo" do
-    patch :update, id: @tipo, tipo: { nome: @tipo.nome, slug: @tipo.slug }
+    patch :update, id: @tipo, tipo: { nome: @tipo.nome }
     assert_redirected_to tipo_path(assigns(:tipo))
   end
 

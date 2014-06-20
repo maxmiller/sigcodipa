@@ -18,7 +18,7 @@ class PlanejamentosControllerTest < ActionController::TestCase
 
   test "should create planejamento" do
     assert_difference('Planejamento.count') do
-      post :create, planejamento: { data_fim_prevista: @planejamento.data_fim_prevista, data_inicio_prevista: @planejamento.data_inicio_prevista, evento: @planejamento.evento, funcionario_id: @planejamento.funcionario_id, justificativa: @planejamento.justificativa, local: @planejamento.local, observacao: @planejamento.observacao, prioriade: @planejamento.prioriade, quantidade_alunos: @planejamento.quantidade_alunos, status: @planejamento.status, tipo_evento: @planejamento.tipo_evento, valor_passagem: @planejamento.valor_passagem }
+      post :create, planejamento: { carga_horaria: @planejamento.carga_horaria, cnpj: @planejamento.cnpj, email: @planejamento.email, empresa: @planejamento.empresa, fim_evento: @planejamento.fim_evento, inicio_evento: @planejamento.inicio_evento, justificativa: @planejamento.justificativa, local_evento: @planejamento.local_evento, nome: @planejamento.nome, nome_evento: @planejamento.nome_evento, prioridade: @planejamento.prioridade, quantidade_aluno: @planejamento.quantidade_aluno, siape: @planejamento.siape, taxa_inscricao: @planejamento.taxa_inscricao, tipo_empresa: @planejamento.tipo_empresa, tipo_solicitacao: @planejamento.tipo_solicitacao, valor_passagem: @planejamento.valor_passagem }
     end
 
     assert_redirected_to planejamento_path(assigns(:planejamento))
@@ -35,7 +35,7 @@ class PlanejamentosControllerTest < ActionController::TestCase
   end
 
   test "should update planejamento" do
-    patch :update, id: @planejamento, planejamento: { data_fim_prevista: @planejamento.data_fim_prevista, data_inicio_prevista: @planejamento.data_inicio_prevista, evento: @planejamento.evento, funcionario_id: @planejamento.funcionario_id, justificativa: @planejamento.justificativa, local: @planejamento.local, observacao: @planejamento.observacao, prioriade: @planejamento.prioriade, quantidade_alunos: @planejamento.quantidade_alunos, status: @planejamento.status, tipo_evento: @planejamento.tipo_evento, valor_passagem: @planejamento.valor_passagem }
+    patch :update, id: @planejamento, planejamento: { carga_horaria: @planejamento.carga_horaria, cnpj: @planejamento.cnpj, email: @planejamento.email, empresa: @planejamento.empresa, fim_evento: @planejamento.fim_evento, inicio_evento: @planejamento.inicio_evento, justificativa: @planejamento.justificativa, local_evento: @planejamento.local_evento, nome: @planejamento.nome, nome_evento: @planejamento.nome_evento, prioridade: @planejamento.prioridade, quantidade_aluno: @planejamento.quantidade_aluno, siape: @planejamento.siape, taxa_inscricao: @planejamento.taxa_inscricao, tipo_empresa: @planejamento.tipo_empresa, tipo_solicitacao: @planejamento.tipo_solicitacao, valor_passagem: @planejamento.valor_passagem }
     assert_redirected_to planejamento_path(assigns(:planejamento))
   end
 

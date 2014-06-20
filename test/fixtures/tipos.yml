@@ -2,8 +2,6 @@
 
 one:
   nome: MyString
-  slug: MyString
 
 two:
   nome: MyString
-  slug: MyString

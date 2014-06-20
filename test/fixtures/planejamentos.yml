@@ -1,29 +1,39 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  funcionario_id: 
-  evento: MyString
-  local: MyString
-  tipo_evento: 1
-  data_inicio_prevista: 2014-06-02
-  data_fim_prevista: 2014-06-02
-  justificativa: MyString
-  quantidade_alunos: 1
-  valor_passagem: 9.99
-  prioriade: 1
-  status: 1
-  observacao: MyString
+  siape: MyString
+  nome: MyString
+  email: MyString
+  tipo_solicitacao: 1
+  prioridade: 1
+  nome_evento: MyString
+  empresa: MyString
+  tipo_empresa: 1
+  local_evento: MyString
+  cnpj: MyString
+  inicio_evento: 2014-06-19
+  fim_evento: 2014-06-19
+  taxa_inscricao: 1.5
+  valor_passagem: 1.5
+  carga_horaria: 1
+  justificativa: 1
+  quantidade_aluno: 1
 
 two:
-  funcionario_id: 
-  evento: MyString
-  local: MyString
-  tipo_evento: 1
-  data_inicio_prevista: 2014-06-02
-  data_fim_prevista: 2014-06-02
-  justificativa: MyString
-  quantidade_alunos: 1
-  valor_passagem: 9.99
-  prioriade: 1
-  status: 1
-  observacao: MyString
+  siape: MyString
+  nome: MyString
+  email: MyString
+  tipo_solicitacao: 1
+  prioridade: 1
+  nome_evento: MyString
+  empresa: MyString
+  tipo_empresa: 1
+  local_evento: MyString
+  cnpj: MyString
+  inicio_evento: 2014-06-19
+  fim_evento: 2014-06-19
+  taxa_inscricao: 1.5
+  valor_passagem: 1.5
+  carga_horaria: 1
+  justificativa: 1
+  quantidade_aluno: 1

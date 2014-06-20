@@ -8,9 +8,9 @@
     .controls
       = f.text_field :valor, :class => 'text_field'
   .control-group
-    = f.label :tipo, :class => 'control-label'
+    = f.label :tipo_id, :class => 'control-label'
     .controls
-      = select_tag(:tipo, options_for_select([['Diárias',1],['Passagens',2]])) 
+      = f.select :tipo_id, Tipo.all.map {|q| [q.nome,q.id] } , :class => 'dropdown-menu pull-right'
   .control-group
     = f.label :ano, :class => 'control-label'
     .controls

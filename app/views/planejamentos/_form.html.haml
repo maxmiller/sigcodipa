@@ -1,61 +1,72 @@
-= form_for @planejamento, :html => { :class => "form-horizontal" } do |f|
-  -if @planejamento.errors.any?
-    .alert.alert-danger.alert-dismissable
-      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
-      %h4= "#{pluralize(@planejamento.errors.count, "error")} prohibited this planejamento from being saved:"
-
-      %ul
-        - @planejamento.errors.full_messages.each do |msg|
-          %li= msg
-
-  .form-group
-    = f.label :funcionario, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :funcionario, :class => 'form-control'
-  .form-group
-    = f.label :evento, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :evento, :class => 'form-control'
-  .form-group
-    = f.label :local, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :local, :class => 'form-control'
-  .form-group
-    = f.label :tipo_evento, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :tipo_evento, :class => 'form-control'
-  .form-group
-    = f.label :data_inicio_prevista, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.date_select :data_inicio_prevista, :class => 'form-control'
-  .form-group
-    = f.label :data_fim_prevista, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.date_select :data_fim_prevista, :class => 'form-control'
-  .form-group
-    = f.label :justificativa, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :justificativa, :class => 'form-control'
-  .form-group
-    = f.label :quantidade_alunos, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :quantidade_alunos, :class => 'form-control'
-  .form-group
-    = f.label :valor_passagem, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :valor_passagem, :class => 'form-control'
-  .form-group
-    = f.label :prioriade, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :prioriade, :class => 'form-control'
-  .form-group
-    = f.label :status, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :status, :class => 'form-control'
-  .form-group
-    = f.label :observacao, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :observacao, :class => 'form-control'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit :class => 'btn btn-primary'
+= form_for @planejamento, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :siape, :class => 'control-label'
+    .controls
+      = f.text_field :siape, :class => 'text_field'
+  .control-group
+    = f.label :nome, :class => 'control-label'
+    .controls
+      = f.text_field :nome, :class => 'text_field'
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.text_field :email, :class => 'text_field'
+  .control-group
+    = f.label :tipo_solicitacao, :class => 'control-label'
+    .controls
+      = f.text_field :tipo_solicitacao, :class => 'text_field'
+  .control-group
+    = f.label :prioridade, :class => 'control-label'
+    .controls
+      = f.text_field :prioridade, :class => 'text_field'
+  .control-group
+    = f.label :nome_evento, :class => 'control-label'
+    .controls
+      = f.text_field :nome_evento, :class => 'text_field'
+  .control-group
+    = f.label :empresa, :class => 'control-label'
+    .controls
+      = f.text_field :empresa, :class => 'text_field'
+  .control-group
+    = f.label :tipo_empresa, :class => 'control-label'
+    .controls
+      = f.text_field :tipo_empresa, :class => 'text_field'
+  .control-group
+    = f.label :local_evento, :class => 'control-label'
+    .controls
+      = f.text_field :local_evento, :class => 'text_field'
+  .control-group
+    = f.label :cnpj, :class => 'control-label'
+    .controls
+      = f.text_field :cnpj, :class => 'text_field'
+  .control-group
+    = f.label :inicio_evento, :class => 'control-label'
+    .controls
+      = f.text_field :inicio_evento, :class => 'text_field'
+  .control-group
+    = f.label :fim_evento, :class => 'control-label'
+    .controls
+      = f.text_field :fim_evento, :class => 'text_field'
+  .control-group
+    = f.label :taxa_inscricao, :class => 'control-label'
+    .controls
+      = f.text_field :taxa_inscricao, :class => 'text_field'
+  .control-group
+    = f.label :valor_passagem, :class => 'control-label'
+    .controls
+      = f.text_field :valor_passagem, :class => 'text_field'
+  .control-group
+    = f.label :carga_horaria, :class => 'control-label'
+    .controls
+      = f.text_field :carga_horaria, :class => 'text_field'
+  .control-group
+    = f.label :justificativa, :class => 'control-label'
+    .controls
+      = f.text_field :justificativa, :class => 'text_field'
+  .control-group
+    = f.label :quantidade_aluno, :class => 'control-label'
+    .controls
+      = f.text_field :quantidade_aluno, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), planejamentos_path, :class => 'btn'

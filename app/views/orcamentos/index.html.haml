@@ -15,8 +15,9 @@
       %tr
         %td= link_to orcamento.id, orcamento_path(orcamento)
         %td= orcamento.nome
-        %td= orcamento.valor
-        %td= orcamento.tipo
+        %td= number_to_currency(orcamento.valor)      # => 1 234 567 890,51 €
+
+        %td= orcamento.tipo.nome
         %td= orcamento.ano
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_orcamento_path(orcamento), :class => 'btn btn-mini'

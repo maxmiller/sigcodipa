@@ -1,1 +1,1 @@
-json.extract! @orcamento, :id, :nome, :valor, :slug, :created_at, :updated_at
+json.extract! @orcamento, :id, :nome, :valor, :tipo_id, :ano, :created_at, :updated_at

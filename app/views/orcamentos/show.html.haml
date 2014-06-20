@@ -11,13 +11,9 @@
   %br
   = @orcamento.valor
 %p
-  %strong= model_class.human_attribute_name(:slug) + ':'
+  %strong= model_class.human_attribute_name(:tipo_id) + ':'
   %br
-  = @orcamento.slug
-%p
-  %strong= model_class.human_attribute_name(:tipo) + ':'
-  %br
-  = @orcamento.tipo
+  = @orcamento.tipo_id
 %p
   %strong= model_class.human_attribute_name(:ano) + ':'
   %br

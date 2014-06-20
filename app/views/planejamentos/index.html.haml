@@ -1,44 +1,53 @@
+- model_class = Planejamento
 .page-header
-  = link_to new_planejamento_path, :class => 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    New Planejamento
-  %h1 Listing planejamentos
-
-.table-responsive
-  %table.table.table-striped.table-bordered.table-hover
-    %thead
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:siape)
+      %th= model_class.human_attribute_name(:nome)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:tipo_solicitacao)
+      %th= model_class.human_attribute_name(:prioridade)
+      %th= model_class.human_attribute_name(:nome_evento)
+      %th= model_class.human_attribute_name(:empresa)
+      %th= model_class.human_attribute_name(:tipo_empresa)
+      %th= model_class.human_attribute_name(:local_evento)
+      %th= model_class.human_attribute_name(:cnpj)
+      %th= model_class.human_attribute_name(:inicio_evento)
+      %th= model_class.human_attribute_name(:fim_evento)
+      %th= model_class.human_attribute_name(:taxa_inscricao)
+      %th= model_class.human_attribute_name(:valor_passagem)
+      %th= model_class.human_attribute_name(:carga_horaria)
+      %th= model_class.human_attribute_name(:justificativa)
+      %th= model_class.human_attribute_name(:quantidade_aluno)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @planejamentos.each do |planejamento|
       %tr
-        %th Funcionario
-        %th Evento
-        %th Local
-        %th Tipo evento
-        %th Data inicio prevista
-        %th Data fim prevista
-        %th Justificativa
-        %th Quantidade alunos
-        %th Valor passagem
-        %th Prioriade
-        %th Status
-        %th Observacao
-        %th
-        %th
-        %th
+        %td= link_to planejamento.id, planejamento_path(planejamento)
+        %td= planejamento.siape
+        %td= planejamento.nome
+        %td= planejamento.email
+        %td= planejamento.tipo_solicitacao
+        %td= planejamento.prioridade
+        %td= planejamento.nome_evento
+        %td= planejamento.empresa
+        %td= planejamento.tipo_empresa
+        %td= planejamento.local_evento
+        %td= planejamento.cnpj
+        %td= planejamento.inicio_evento
+        %td= planejamento.fim_evento
+        %td= planejamento.taxa_inscricao
+        %td= planejamento.valor_passagem
+        %td= planejamento.carga_horaria
+        %td= planejamento.justificativa
+        %td= planejamento.quantidade_aluno
+        %td=l planejamento.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_planejamento_path(planejamento), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), planejamento_path(planejamento), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-    %tbody
-      - @planejamentos.each do |planejamento|
-        %tr
-          %td= planejamento.funcionario
-          %td= planejamento.evento
-          %td= planejamento.local
-          %td= planejamento.tipo_evento
-          %td= planejamento.data_inicio_prevista
-          %td= planejamento.data_fim_prevista
-          %td= planejamento.justificativa
-          %td= planejamento.quantidade_alunos
-          %td= planejamento.valor_passagem
-          %td= planejamento.prioriade
-          %td= planejamento.status
-          %td= planejamento.observacao
-          %td= link_to 'Show', planejamento
-          %td= link_to 'Edit', edit_planejamento_path(planejamento)
-          %td= link_to 'Destroy', planejamento, :data => { confirm: 'Are you sure?' }, :method => :delete
+= link_to t('.new', :default => t("helpers.links.new")), new_planejamento_path, :class => 'btn btn-primary'

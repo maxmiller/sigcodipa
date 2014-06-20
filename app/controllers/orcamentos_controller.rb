@@ -64,11 +64,11 @@ class OrcamentosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_orcamento
-      @orcamento = Orcamento.friendly.find(params[:id])
+      @orcamento = Orcamento.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orcamento_params
-      params.require(:orcamento).permit(:nome, :valor , :tipo, :ano)
+      params.require(:orcamento).permit(:nome, :valor, :tipo_id, :ano)
     end
 end

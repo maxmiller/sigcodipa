@@ -1,21 +1,8 @@
-= form_for @tipo, :html => { :class => "form-horizontal" } do |f|
-  -if @tipo.errors.any?
-    .alert.alert-danger.alert-dismissable
-      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
-      %h4= "#{pluralize(@tipo.errors.count, "error")} prohibited this tipo from being saved:"
-
-      %ul
-        - @tipo.errors.full_messages.each do |msg|
-          %li= msg
-
-  .form-group
-    = f.label :nome, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :nome, :class => 'form-control'
-  .form-group
-    = f.label :slug, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :slug, :class => 'form-control'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit :class => 'btn btn-primary'
+= form_for @tipo, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :nome, :class => 'control-label'
+    .controls
+      = f.text_field :nome, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), tipos_path, :class => 'btn'

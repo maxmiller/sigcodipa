@@ -69,6 +69,6 @@ class PlanejamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def planejamento_params
-      params.require(:planejamento).permit(:funcionario_id, :evento, :local, :tipo_evento, :data_inicio_prevista, :data_fim_prevista, :justificativa, :quantidade_alunos, :valor_passagem, :prioriade, :status, :observacao)
+      params.require(:planejamento).permit(:siape, :nome, :email, :tipo_solicitacao, :prioridade, :nome_evento, :empresa, :tipo_empresa, :local_evento, :cnpj, :inicio_evento, :fim_evento, :taxa_inscricao, :valor_passagem, :carga_horaria, :justificativa, :quantidade_aluno)
     end
 end

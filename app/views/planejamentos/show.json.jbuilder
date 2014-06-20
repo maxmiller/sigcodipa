@@ -1,1 +1,1 @@
-json.extract! @planejamento, :id, :funcionario_id, :evento, :local, :tipo_evento, :data_inicio_prevista, :data_fim_prevista, :justificativa, :quantidade_alunos, :valor_passagem, :prioriade, :status, :observacao, :created_at, :updated_at
+json.extract! @planejamento, :id, :siape, :nome, :email, :tipo_solicitacao, :prioridade, :nome_evento, :empresa, :tipo_empresa, :local_evento, :cnpj, :inicio_evento, :fim_evento, :taxa_inscricao, :valor_passagem, :carga_horaria, :justificativa, :quantidade_aluno, :created_at, :updated_at

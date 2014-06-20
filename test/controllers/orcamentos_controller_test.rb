@@ -18,7 +18,7 @@ class OrcamentosControllerTest < ActionController::TestCase
 
   test "should create orcamento" do
     assert_difference('Orcamento.count') do
-      post :create, orcamento: { nome: @orcamento.nome, slug: @orcamento.slug, valor: @orcamento.valor }
+      post :create, orcamento: { ano: @orcamento.ano, nome: @orcamento.nome, tipo_id: @orcamento.tipo_id, valor: @orcamento.valor }
     end
 
     assert_redirected_to orcamento_path(assigns(:orcamento))
@@ -35,7 +35,7 @@ class OrcamentosControllerTest < ActionController::TestCase
   end
 
   test "should update orcamento" do
-    patch :update, id: @orcamento, orcamento: { nome: @orcamento.nome, slug: @orcamento.slug, valor: @orcamento.valor }
+    patch :update, id: @orcamento, orcamento: { ano: @orcamento.ano, nome: @orcamento.nome, tipo_id: @orcamento.tipo_id, valor: @orcamento.valor }
     assert_redirected_to orcamento_path(assigns(:orcamento))
   end
 
